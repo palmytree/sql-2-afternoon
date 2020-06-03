@@ -67,30 +67,18 @@ WHERE g.name = 'Alternative & Punk';
   - At least 5 joins.
 ```sql
 SELECT 
-	p.name AS playlist, 
-	t.name AS track, 
-	m.title AS album,
-	a.name AS artist,
-	g.name AS genre
-FROM
-	playlist p
-JOIN
-	playlist_track pt
-  ON pt.playlist_id = p.playlist_id
-JOIN
-	track t
-  ON t.track_id = pt.track_id
-JOIN
-	album m
-  ON t.album_id = m.album_id
-JOIN
-	artist a
-  ON m.artist_id = a.artist_id
-JOIN
-	genre g
-  ON g.genre_id = t.genre_id
-WHERE
-	p.name = 'Music';
+p.name AS playlist, 
+t.name AS track, 
+m.title AS album,
+a.name AS artist,
+g.name AS genre
+FROM playlist p
+JOIN playlist_track pt ON pt.playlist_id = p.playlist_id
+JOIN track t ON t.track_id = pt.track_id
+JOIN album m ON t.album_id = m.album_id
+JOIN artist a ON m.artist_id = a.artist_id
+JOIN genre g ON g.genre_id = t.genre_id
+WHERE p.name = 'Music';
 ```
 
 ## Nested Queries

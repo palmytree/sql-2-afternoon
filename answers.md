@@ -317,6 +317,11 @@ ADD CONSTRAINT fk FOREIGN KEY (order_id) REFERENCES orders (order_id);
 ```
 - Add some data to fill up each table.
   - At least 3 users, 3 products, 3 orders.
+
+<details>
+
+<summary> <code> My mockaroo data </code> </summary>
+
   ```sql
   insert into users (first_name, last_name, email) values ('Clarinda', 'Osipov', 'cosipov0@mozilla.com');
   insert into users (first_name, last_name, email) values ('Delcina', 'Esby', 'desby1@furl.net');
@@ -472,6 +477,8 @@ ADD CONSTRAINT fk FOREIGN KEY (order_id) REFERENCES orders (order_id);
   insert into order_line (order_id, product_id, quantity) values (6, 14, 20);
   insert into order_line (order_id, product_id, quantity) values (1, 4, 17);
   ```
+  </details>
+
 - Run queries against your data.
   - Get all products for the first order.
   ```sql
